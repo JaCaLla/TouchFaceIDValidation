@@ -1,6 +1,6 @@
 
 # TouchID/FaceId Validation
-This repository contains a basic implementation that receives Push notifications.
+This repository implements an iOS App development that implements local biometric authentication.
 
 This repository serves as the foundational code for the accompanying blog post. [Unlocking Firebase iOS Push Notifications](https://javios.eu/swift/harnessing-nfc-technology-in-your-ios-app/)
 
