@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if isAuthenticated {
-                Text("¡Autenticación exitosa!")
+                Text("Authentication successful!")
                     .font(.title)
                     .foregroundColor(.green)
             } else {
@@ -28,7 +28,7 @@ struct ContentView: View {
             Button(action: {
                 authenticate()
             }) {
-                Text("Autenticar con Touch ID / Face ID")
+                Text("Authenticate with Touch ID / Face ID")
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
@@ -42,9 +42,8 @@ struct ContentView: View {
         let context = LAContext()
         var error: NSError?
 
-        // Verifica si el dispositivo soporta Touch ID o Face ID
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Autentícate para acceder a la aplicación"
+            let reason = "Authenticate for having access to application"
 
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                 DispatchQueue.main.async {
@@ -53,7 +52,7 @@ struct ContentView: View {
                         errorMessage = ""
                     } else {
                         isAuthenticated = false
-                        errorMessage = "Autenticación fallida"
+                        errorMessage = "Failed authentication"
                     }
                 }
             }
